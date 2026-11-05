@@ -10,3 +10,8 @@ def test_contar_teste():
 def test_contar_vazio():
     a = ""
     assert contar_palavras(a) == {}
+
+
+def test_contar_bom_dia():
+    a = "bom dia"
+    assert contar_palavras(a) == {"bom": 1, "dia": 1}
