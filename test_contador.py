@@ -15,3 +15,8 @@ def test_contar_vazio():
 def test_contar_bom_dia():
     a = "bom dia"
     assert contar_palavras(a) == {"bom": 1, "dia": 1}
+
+
+def test_contar_ignorar_pontos():
+    a = "... !"
+    assert contar_palavras(a) == {}
