@@ -5,7 +5,7 @@ def contar_palavras(palavras):
         if letra != "." and letra != "," and letra != ";" and letra != ":" and letra != "!" and letra != "?":
             palavras2 += letra
 
-    lista = palavras2.split(" ")
+    lista = palavras2.split()
     for palavra in lista:
         if palavra != "":
             dic[palavra] = 1
