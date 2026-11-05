@@ -1,5 +1,7 @@
 def contar_palavras(palavras):
     dic = {}
     if palavras != "":
-        dic[palavras] = 1
+        lista = palavras.split(" ")
+        for palavra in lista:
+            dic[palavra] = 1
     return dic
