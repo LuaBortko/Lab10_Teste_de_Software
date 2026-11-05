@@ -8,5 +8,8 @@ def contar_palavras(palavras):
     lista = palavras2.split()
     for palavra in lista:
         if palavra != "":
-            dic[palavra] = 1
+            if palavra not in dic.keys():
+                dic[palavra] = 1
+            else:
+                dic[palavra] += 1
     return dic
