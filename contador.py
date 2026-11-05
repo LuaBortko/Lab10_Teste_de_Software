@@ -1,2 +1,5 @@
 def contar_palavras(palavras):
-    return {"teste": 1}
+    dic = {}
+    if palavras != "":
+        dic[palavras] = 1
+    return dic
