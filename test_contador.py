@@ -35,3 +35,8 @@ def test_contar_mesma_palavra():
 def test_contar_dia_dia_com_pontuacao():
     a = ",dia, ;dia;"
     assert contar_palavras(a) == {"dia": 2}
+
+
+def test_contar_dia_dia_com_pontuacao2():
+    a = ":dia: ?dia?"
+    assert contar_palavras(a) == {"dia": 2}
