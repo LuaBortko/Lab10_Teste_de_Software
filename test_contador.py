@@ -25,3 +25,8 @@ def test_contar_ignorar_pontos():
 def test_contar_bom_dia_quebra_linha():
     a = "bom\ndia"
     assert contar_palavras(a) == {"bom": 1, "dia": 1}
+
+
+def test_contar_mesma_palavra():
+    a = "dia a dia"
+    assert contar_palavras(a) == {"dia": 2, "a": 1}
