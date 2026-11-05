@@ -20,3 +20,8 @@ def test_contar_bom_dia():
 def test_contar_ignorar_pontos():
     a = "... !"
     assert contar_palavras(a) == {}
+
+
+def test_contar_bom_dia_quebra_linha():
+    a = "bom\ndia"
+    assert contar_palavras(a) == {"bom": 1, "dia": 1}
