@@ -30,3 +30,8 @@ def test_contar_bom_dia_quebra_linha():
 def test_contar_mesma_palavra():
     a = "dia a dia"
     assert contar_palavras(a) == {"dia": 2, "a": 1}
+
+
+def test_contar_dia_dia_com_pontuacao():
+    a = ",dia, ;dia;"
+    assert contar_palavras(a) == {"dia": 2}
