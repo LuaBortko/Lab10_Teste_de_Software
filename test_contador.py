@@ -40,3 +40,8 @@ def test_contar_dia_dia_com_pontuacao():
 def test_contar_dia_dia_com_pontuacao2():
     a = ":dia: ?dia?"
     assert contar_palavras(a) == {"dia": 2}
+
+
+def test_contar_dia_dia_com_letra_maiuscula_minuscula():
+    a = "Dia dia DIA"
+    assert contar_palavras(a) == {"dia": 2}
