@@ -73,3 +73,19 @@ def test_normal_depois_de_duas_prioritarias():
     assert fila.chamar() == "P2"
     assert fila.chamar() == "N1"
     assert fila.chamar() == "P3"
+
+
+def test_contagem_reinicia_apos_normal():
+    fila = Fila()
+
+    fila.emitir("normal")
+    fila.emitir("prioritaria")
+    fila.emitir("prioritaria")
+    fila.emitir("prioritaria")
+    fila.emitir("prioritaria")
+
+    assert fila.chamar() == "P1"
+    assert fila.chamar() == "P2"
+    assert fila.chamar() == "N1"
+    assert fila.chamar() == "P3"
+    assert fila.chamar() == "P4"
