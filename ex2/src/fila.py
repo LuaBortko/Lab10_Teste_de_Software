@@ -4,6 +4,7 @@ class Fila:
         self.prioritarias = []
         self.contador_normal = 0
         self.contador_prioritaria = 0
+        self.prioritarias_seguidas = 0
 
     @property
     def aguardando(self):
@@ -29,7 +30,11 @@ class Fila:
         if self.aguardando == 0:
             raise IndexError("fila vazia")
 
-        if self.prioritarias:
+        if self.prioritarias and (
+            self.prioritarias_seguidas < 2 or not self.normais
+        ):
+            self.prioritarias_seguidas += 1
             return self.prioritarias.pop(0)
 
+        self.prioritarias_seguidas = 0
         return self.normais.pop(0)
