@@ -49,3 +49,7 @@ def test_contar_dia_dia_com_letra_maiuscula_minuscula():
 
 def test_pontuacao_e_maiusculas():
     assert contar_palavras("fim. Fim!") == {"fim": 2}
+
+
+def test_palavra_com_hifen():
+    assert contar_palavras("guarda-chuva") == {"guarda-chuva": 1}
