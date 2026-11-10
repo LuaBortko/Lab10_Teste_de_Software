@@ -45,3 +45,17 @@ def test_prioritaria_passa_na_frente():
 
     assert fila.chamar() == "P1"
     assert fila.chamar() == "N1"
+
+
+def test_tipo_invalido():
+    fila = Fila()
+
+    with pytest.raises(ValueError):
+        fila.emitir("urgente")
+
+
+def test_chamar_fila_vazia():
+    fila = Fila()
+
+    with pytest.raises(IndexError):
+        fila.chamar()
