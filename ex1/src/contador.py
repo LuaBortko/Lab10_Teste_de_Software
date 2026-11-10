@@ -1,15 +1,16 @@
-def contar_palavras(palavras):
+def contar_palavras(texto):
     dic = {}
-    palavras2 = ""
-    for letra in palavras:  # .,;:!?
-        if letra != "." and letra != "," and letra != ";" and letra != ":" and letra != "!" and letra != "?":
-            palavras2 += letra
+    texto = texto.lower()
 
-    lista = palavras2.lower().split()
+    for sinal in ".,;:!?":
+        texto = texto.replace(sinal, " ")
+
+    lista = texto.split()
+
     for palavra in lista:
-        if palavra != "":
-            if palavra not in dic.keys():
-                dic[palavra] = 1
-            else:
-                dic[palavra] += 1
+        if palavra not in dic:
+            dic[palavra] = 1
+        else:
+            dic[palavra] += 1
+
     return dic
