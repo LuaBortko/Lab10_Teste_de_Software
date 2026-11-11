@@ -79,3 +79,11 @@ def test_cupom_dez_abaixo_minimo():
     carrinho.aplicar_cupom("DEZ")
 
     assert carrinho.total == 9999
+
+
+def test_cupom_vinte():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("VINTE")
+
+    assert carrinho.total == 24000
