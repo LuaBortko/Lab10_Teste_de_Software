@@ -45,11 +45,11 @@ def test_cupom_desconhecido():
 
 def test_adicionar_apos_cupom():
     carrinho = Carrinho()
-    carrinho.adicionar(1000)
+    carrinho.adicionar(5000)
     carrinho.aplicar_cupom("DEZ")
-    carrinho.adicionar(1000)
+    carrinho.adicionar(5000)
 
-    assert carrinho.total == 1800
+    assert carrinho.total == 9000
 
 
 def test_quantidade_zero_rejeitada():
