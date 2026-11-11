@@ -1,11 +1,14 @@
-CUPONS = {"DEZ": 10}
+CUPONS = {
+    "DEZ": (10, 10000),
+    "VINTE": (20, 30000)
+}
 
 
 class Carrinho:
     def __init__(self):
         self._subtotal = 0
         self._desconto = 0
-        self._minimo = 10000
+        self._minimo = 0
 
     def adicionar(self, preco, quantidade=1):
         if preco <= 0:
@@ -20,8 +23,7 @@ class Carrinho:
         if codigo not in CUPONS:
             raise ValueError("cupom desconhecido")
 
-        self._desconto = CUPONS[codigo]
-        self._minimo = 10000
+        self._desconto, self._minimo = CUPONS[codigo]
 
     @property
     def total(self):
