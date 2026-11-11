@@ -30,10 +30,10 @@ def test_preco_zero_rejeitado():
 
 def test_cupom_dez():
     carrinho = Carrinho()
-    carrinho.adicionar(5000)
+    carrinho.adicionar(10000)
     carrinho.aplicar_cupom("DEZ")
 
-    assert carrinho.total == 4500
+    assert carrinho.total == 9000
 
 
 def test_cupom_desconhecido():
@@ -71,3 +71,11 @@ def test_quantidade_fracionaria_rejeitada():
 
     with pytest.raises(ValueError):
         carrinho.adicionar(1000, quantidade=1.5)
+
+
+def test_cupom_dez_abaixo_minimo():
+    carrinho = Carrinho()
+    carrinho.adicionar(9999)
+    carrinho.aplicar_cupom("DEZ")
+
+    assert carrinho.total == 9999
